@@ -53,7 +53,7 @@ table {
 
 /* COLOURS & FONTS */
 
-@import url(https://fonts.google.com/share?selection.family=Molle:ital@1%7CMontserrat);
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
 
 :root {
   --yellow: #F6D64A;
@@ -64,10 +64,203 @@ table {
   --light-grey: #EAEAEA;
   --white: #FFFFFF;
   --black: #000000;
-  --box-shadow: -0.5rem 0.5rem 1rem var(--med-gray); 
-  --small-shadow: -0.25rem 0.25rem 0.5rem var(--med-gray);
-  --filter-shadow: drop-shadow(-0.5rem 0.5rem 0.5rem var(--med-gray));
   font-size: 16px;
   --fonts: Montserrat, sans-serif;
   --font-head: Molle, cursive; 
 }
+
+/* SKIP LINK */
+#skip{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+ 
+#skip:focus{
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* BODY */
+body {
+    box-sizing: border-box;
+	line-height: 1.35;
+	font-family: var(--fonts);
+    font-weight: bold;
+	color: var(--dark-gray);
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+    font-family: var(--font-head);
+}
+
+h1 {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+    grid-column: 1 / span 2;
+}
+
+h2, h3 {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+/* HEADER */
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    /* GRADIENT */
+    background: #55BCD5;
+    background: -moz-linear-gradient(top, #55BCD5 0%, #FFFFFF 100%, #FFFFFF 100%);
+    background: -webkit-linear-gradient(top, #55BCD5 0%, #FFFFFF 100%, #FFFFFF 100%);
+    background: linear-gradient(to bottom, #55BCD5 0%, #FFFFFF 100%, #FFFFFF 100%);
+}
+
+#logo{
+	padding: 0;
+}
+
+header img{
+	display: block;
+	width: 100%;
+	max-width: 150px;
+	margin: 0 auto;
+}
+
+header p {
+    padding: 0 1rem 1rem;
+    font-size: 1.2rem;
+    grid-column: 1 / span 2;
+}
+
+/* NAV */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+nav {
+    padding-top: 2.5rem;
+    grid-column: 2 / span 1;
+    grid-row: 1 / 1;
+}
+
+ul {
+    position: absolute;
+    width: 100%;
+    list-style-type: none;
+    right: -100%;
+    -webkit-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    transition: left 0.3s ease; 
+}
+
+#menu-toggle input:checked ~ ul {
+    right: 0;
+}
+
+#menu-toggle input:checked + label {
+    background-color: var(--dark-grey);
+    color: var(--white);
+}
+
+#menu-toggle input {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -7px;
+    left: -5px;  
+    padding: 0;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */  
+    -webkit-touch-callout: none;
+}
+
+#menu-toggle label {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    cursor: pointer;
+    background-color: var(--yellow);
+}
+
+nav a {
+    
+    padding: 1rem 0;
+    background-color: var(--teal);
+    color: var(--dark-grey);
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    background-color: var(--yellow);
+}
+
+nav li {
+    list-style:none;
+    border: 1px solid var(--dark-grey) ;
+}
+
+/* LINK */
+a {
+    text-align: center;
+    display: block;
+    text-decoration:none;
+}
+
+/* INTRO */
+#intro p {
+    margin: 0 1rem 1rem;
+}
+
+#img-grid {
+    display: grid;
+    gap: .5rem;
+    grid-template-rows: repeat(3, 1fr);
+    margin: 0;
+    padding: 0;
+}
+
+#img-grid img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+	max-width: 500px;
+}
+
+/* PLAN */
+
+/* TESTIMONIALS */
+
+/* ABOUT */
+
+/* CONTACT */
+
+/* FOOTER */
+
+/* HOVER */
+@media (hover:hover) {}
+
+/* MEDIUM SCREEN */
+@media screen and (min-width: 500px) {}
+
+/* LARGE SCREEN */
+@media screen and (min-width: 980px) {}
